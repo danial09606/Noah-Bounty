@@ -18,6 +18,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Utilities.shared.isJailbroken() {
+            // requires root view controller to prompt this alert
+            let alert = UIAlertController(title: "Jailbroken Device Detected", message: "Unable to proceed with Noah App as the system does not support rooted phone.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+                //Quit App
+                Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
+                    exit(0)
+                }
+            }))
+
+            self.present(alert, animated: true)
+            
+            return
+            
+        }
+        
         self.title = titlePage
         
         self.setupWebView()
@@ -62,7 +79,7 @@ class ViewController: UIViewController {
     func urlSetup() {
         guard let url = URL(string: urlString ?? "https://app.noah.com") else { return }
         var request = URLRequest(url: url)
-        
+        request.cachePolicy = .returnCacheDataElseLoad
         request.setValue("true", forHTTPHeaderField: "webview")
         
         self.webView.load(request)

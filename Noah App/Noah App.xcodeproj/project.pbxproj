@@ -16,6 +16,7 @@
 		294C01572A3759740043AA98 /* Noah_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C01562A3759740043AA98 /* Noah_AppTests.swift */; };
 		294C01612A3759740043AA98 /* Noah_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C01602A3759740043AA98 /* Noah_AppUITests.swift */; };
 		294C01632A3759740043AA98 /* Noah_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294C01622A3759740043AA98 /* Noah_AppUITestsLaunchTests.swift */; };
+		29B89DE02A6AC06E00D94DC3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B89DDF2A6AC06E00D94DC3 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		294C015C2A3759740043AA98 /* Noah AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Noah AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		294C01602A3759740043AA98 /* Noah_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noah_AppUITests.swift; sourceTree = "<group>"; };
 		294C01622A3759740043AA98 /* Noah_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noah_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29B89DDF2A6AC06E00D94DC3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				294C013F2A3759730043AA98 /* AppDelegate.swift */,
 				294C01412A3759730043AA98 /* SceneDelegate.swift */,
 				294C01432A3759730043AA98 /* ViewController.swift */,
+				29B89DDF2A6AC06E00D94DC3 /* Utilities.swift */,
 				294C01452A3759730043AA98 /* Main.storyboard */,
 				294C01482A3759740043AA98 /* Assets.xcassets */,
 				294C014A2A3759740043AA98 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			files = (
 				294C01442A3759730043AA98 /* ViewController.swift in Sources */,
 				294C01402A3759730043AA98 /* AppDelegate.swift in Sources */,
+				29B89DE02A6AC06E00D94DC3 /* Utilities.swift in Sources */,
 				294C01422A3759730043AA98 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +457,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				"OTHER_SWIFT_FLAGS[sdk=appletvsimulator*]" = "-D TV_OS_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=iphonesimulator*]" = "-D IOS_SIMULATOR";
+				"OTHER_SWIFT_FLAGS[sdk=watchsimulator*]" = "-D WATCH_OS_SIMULATOR";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.noah.Noah-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
